@@ -66,8 +66,11 @@ export default function Hero() {
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'flex-start',
-                    px: { xs: 3, sm: 6, md: 10 },
+                    textAlign: 'left',
+                    px: { xs: 2.5, sm: 6, md: 10 },
+                    width: '100%',
                     maxWidth: '850px',
+                    boxSizing: 'border-box',
                 }}
             >
                 {/* Available for Opportunities Chip */}
@@ -82,6 +85,9 @@ export default function Hero() {
                             fontSize: { xs: '0.78rem', sm: '0.85rem' },
                             border: '1px solid rgba(16, 185, 129, 0.3)',
                             py: 0.5,
+                            height: 'auto',
+                            maxWidth: '100%',
+                            '& .MuiChip-label': { whiteSpace: 'normal', py: 0.25 },
                         }}
                     />
                 </Box>
@@ -101,7 +107,7 @@ export default function Hero() {
                 <Typography
                     variant="h1"
                     sx={{
-                        fontSize: { xs: '2.5rem', sm: '3.6rem', md: '4.2rem' },
+                        fontSize: { xs: '2.3rem', sm: '3.6rem', md: '4.2rem' },
                         fontWeight: 900,
                         lineHeight: 1.1,
                         color: '#111827',
@@ -117,7 +123,7 @@ export default function Hero() {
                     sx={{
                         fontWeight: 700,
                         color: '#047857',
-                        fontSize: { xs: '1.5rem', sm: '2rem', md: '2.3rem' },
+                        fontSize: { xs: '1.35rem', sm: '2rem', md: '2.3rem' },
                         mb: 2.5,
                         letterSpacing: '-0.01em',
                     }}
@@ -171,6 +177,8 @@ export default function Hero() {
                         flexWrap: 'wrap',
                         alignItems: 'center',
                         gap: 2,
+                        width: '100%',
+                        '& > a': { flex: { xs: '1 1 100%', sm: '0 0 auto' } },
                     }}
                 >
                     <Button

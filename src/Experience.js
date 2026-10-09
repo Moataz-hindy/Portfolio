@@ -4,16 +4,46 @@ import Typography from '@mui/material/Typography';
 import Chip from '@mui/material/Chip';
 import WorkIcon from '@mui/icons-material/Work';
 import GroupsIcon from '@mui/icons-material/Groups';
+import SchoolIcon from '@mui/icons-material/School';
+import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 
 export default function Experience() {
     const experiences = [
+        {
+            id: 'qubeterra',
+            role: "AI Engineering Intern · AI NextGen Fellowship",
+            company: "Qubeterra · Remote",
+            date: "Aug 2026 – Sep 2026",
+            type: "Internship",
+            award: "Best Team Award",
+            icon: <WorkIcon sx={{ fontSize: '1rem', color: '#6ee7b7' }} />,
+            description: [
+                "Selected for the Qubeterra AI NextGen Fellowship 2026, an international program supported by ITU Generation Connect, Huawei and Nature Eye Labs.",
+                "Led the engineering of Touchline Intelligence, a multi-agent football intelligence platform where 3v3 polarized AI personas (analysts, coaches, pundits) debate tactics over multiple rounds without collapsing into early consensus.",
+                "Built the grounded RAG pipeline on PostgreSQL + pgvector, stance-trajectory and agreement analytics, and an LLM decision engine that issues final rulings and action plans.",
+                "Delivered it full-stack with FastAPI and Docker and a React/Vite frontend; the team won the Fellowship's Best Team Award and a letter of recommendation."
+            ]
+        },
+        {
+            id: 'iti',
+            role: "Applied AI Development: Computer Vision, NLP & LLMs",
+            company: "Information Technology Institute (ITI) · Remote",
+            date: "Aug 2026 – Sep 2026",
+            type: "Training Program",
+            icon: <SchoolIcon sx={{ fontSize: '1rem', color: '#6ee7b7' }} />,
+            description: [
+                "Built real-time object detection and scene-understanding pipelines with YOLO and pretrained deep learning models.",
+                "Implemented NLP workflows with text representations, semantic search and prompt engineering for large language models.",
+                "Engineered RAG systems combining ChromaDB, embedding models and local LLM inference, ending in a multimodal capstone that fuses computer vision with an LLM-powered RAG pipeline."
+            ]
+        },
         {
             id: 1,
             role: "AI Intern",
             company: "National Academy of Information Technology for Persons with Disabilities (NAID)",
             date: "Jun 2025 – Sept 2025",
             type: "Work Experience",
-            icon: <WorkIcon sx={{ fontSize: '1rem', color: '#10b981' }} />,
+            icon: <WorkIcon sx={{ fontSize: '1rem', color: '#6ee7b7' }} />,
             description: [
                 "Co-developed Lexiland, an AI-driven prototype utilizing computer vision and standard webcams to track eye movement patterns for early dyslexia detection.",
                 "Designed and implemented assistive features including a text-to-speech module and an accessible dyslexia-friendly UI layout in React to support neurodivergent learners.",
@@ -26,7 +56,7 @@ export default function Experience() {
             company: "IEEE EUI Student Branch (IEEE EUI SB)",
             date: "Oct 2024 – May 2025",
             type: "Leadership & Community",
-            icon: <GroupsIcon sx={{ fontSize: '1rem', color: '#10b981' }} />,
+            icon: <GroupsIcon sx={{ fontSize: '1rem', color: '#6ee7b7' }} />,
             description: [
                 "Contributed to planning, logistics, and ground operations for technical engineering workshops, hackathons, and student activities.",
                 "Handled technical event equipment setup, coordinated cross-functional volunteer schedules, and managed participant flow to guarantee seamless execution."
@@ -38,7 +68,7 @@ export default function Experience() {
             company: "Developer Student Clubs (DSC) MENA",
             date: "April 2024",
             type: "Leadership & Community",
-            icon: <GroupsIcon sx={{ fontSize: '1rem', color: '#10b981' }} />,
+            icon: <GroupsIcon sx={{ fontSize: '1rem', color: '#6ee7b7' }} />,
             description: [
                 "Coordinated keynote speakers, managed event logistics, and oversaw registration for the inaugural regional DSC MENA event hosted at Egypt University of Informatics.",
                 "Collaborated within a multicultural team environment, developing strong project management, communication, and organizational execution skills."
@@ -72,12 +102,12 @@ export default function Experience() {
                     letterSpacing: '-0.02em',
                 }}
             >
-                Experience & Leadership<span style={{ color: '#10b981' }}>.</span>
+                Experience & Leadership<span style={{ color: '#6ee7b7' }}>.</span>
             </Typography>
 
             <Typography
                 sx={{
-                    color: '#94a3b8',
+                    color: '#d1d5db',
                     fontSize: { xs: '1rem', md: '1.15rem' },
                     textAlign: 'center',
                     maxWidth: '700px',
@@ -85,7 +115,7 @@ export default function Experience() {
                     lineHeight: 1.7,
                 }}
             >
-                Applied AI research, technical internships, and student leadership in engineering communities.
+                Applied AI internships, intensive training programs, and student leadership in engineering communities.
             </Typography>
 
             {/* THE TIMELINE CONTAINER */}
@@ -147,24 +177,40 @@ export default function Experience() {
                         >
                             {/* Type and Date Header */}
                             <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 1, mb: 1.5 }}>
-                                <Chip
-                                    icon={exp.icon}
-                                    label={exp.type}
-                                    size="small"
-                                    sx={{
-                                        backgroundColor: 'rgba(16, 185, 129, 0.15)',
-                                        color: '#a7f3d0',
-                                        fontWeight: 700,
-                                        fontSize: '0.8rem',
-                                    }}
-                                />
-                                <Typography sx={{ color: '#94a3b8', fontFamily: 'monospace', fontSize: '0.88rem' }}>
+                                <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
+                                    <Chip
+                                        icon={exp.icon}
+                                        label={exp.type}
+                                        size="small"
+                                        sx={{
+                                            backgroundColor: 'rgba(110, 231, 183, 0.15)',
+                                            color: '#d1fae5',
+                                            fontWeight: 700,
+                                            fontSize: '0.8rem',
+                                        }}
+                                    />
+                                    {exp.award && (
+                                        <Chip
+                                            icon={<EmojiEventsIcon sx={{ fontSize: '1rem' }} />}
+                                            label={exp.award}
+                                            size="small"
+                                            sx={{
+                                                backgroundColor: '#6ee7b7',
+                                                color: '#064e3b',
+                                                fontWeight: 800,
+                                                fontSize: '0.8rem',
+                                                '& .MuiChip-icon': { color: '#064e3b' },
+                                            }}
+                                        />
+                                    )}
+                                </Box>
+                                <Typography sx={{ color: '#6ee7b7', fontFamily: 'monospace', fontSize: '0.88rem' }}>
                                     {exp.date}
                                 </Typography>
                             </Box>
 
                             {/* Role & Company */}
-                            <Typography variant="h5" sx={{ color: '#10b981', fontWeight: 800, mb: 0.5, fontSize: { xs: '1.25rem', md: '1.45rem' } }}>
+                            <Typography variant="h5" sx={{ color: '#6ee7b7', fontWeight: 800, mb: 0.5, fontSize: { xs: '1.25rem', md: '1.45rem' } }}>
                                 {exp.role}
                             </Typography>
                             <Typography variant="h6" sx={{ color: 'white', fontWeight: 600, mb: 2, fontSize: { xs: '1.05rem', md: '1.15rem' } }}>
@@ -175,7 +221,7 @@ export default function Experience() {
                             <Box
                                 component="ul"
                                 sx={{
-                                    color: '#cbd5e1',
+                                    color: '#d1d5db',
                                     m: 0,
                                     pl: 2.5,
                                     '& li': {
